@@ -73,7 +73,7 @@ session_start();
 
     <!-- Awal Dashboard -->
 
-    <section class="bg-[#F1F1F1] max-w-screen-xl flex flex-wrap rounded-md justify-between mx-auto p-4 mt-32 mb-14">
+    <section class="bg-[#F1F1F1] lg:w-2/3 flex flex-wrap rounded-md justify-between mx-auto p-4 mt-32 mb-14">
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">

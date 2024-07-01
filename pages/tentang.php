@@ -85,146 +85,134 @@ session_start();
         <div class="mt-12 mb-10">
             <h2 class="sm:text-2xl text-2xl font-bold text-center text-gray-900 mb-3">FAQs</h2>
             <div class="w-[250px] mt-4 h-[2px] mx-auto bg-gray-500 mb-4"></div>
-            <div class="divide-y divide-gray-200">
+            <div class="divide-y divide-gray-200 mx-auto">
                     <!-- Accordion 1 -->
-                    <div class="bg-white rounded-lg shadow-md mb-4">
-                        <h2>
-                            <button type="button"
-                                class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
-                                aria-expanded="true" aria-controls="accordion-collapse-body-1"
-                                data-accordion-target="#accordion-collapse-body-1">
-                                <span>Siapa yang bisa berdonasi di darikita.com?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-collapse-body-1" class="p-5">
-                            <p class="mb-2 text-gray-500">Siapapun dapat berdonasi di darikita.com, baik individu,
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    
+                    <button type="button" class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100" aria-expanded="true" aria-controls="accordion-collapse-body-1" data-accordion-target="#accordion-collapse-body-1">
+                        <span>Siapa yang bisa berdonasi di darikita.com?</span>
+                        <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                    
+                    <div id="accordion-collapse-body-1" class="p-5">
+                        <p class="mb-2 text-gray-500">Siapapun dapat berdonasi di darikita.com, baik individu,
                                 organisasi, maupun perusahaan. Tidak ada batasan minimum untuk jumlah donasi.</p>
-                        </div>
                     </div>
+                </div>
 
                     <!-- Accordion 2 -->
-                    <div class="bg-white rounded-lg shadow-md mb-4">
-                        <h2>
-                            <button type="button"
-                                class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
-                                aria-expanded="false" aria-controls="accordion-collapse-body-3"
-                                data-accordion-target="#accordion-collapse-body-3">
-                                <span>Ada kategori dan jenis makanan untuk berdonasi di darikita.com?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-collapse-body-3" class="hidden p-5">
-                            <p class="mb-2 text-gray-500">Donasi Makanan Tahan Lama: Anda dapat berdonasi berupa bahan
-                                pokok seperti beras, makanan instan, tepung, gula, garam, minyak dan lainnya yang tahan
-                                lama. Donasi Makanan Segar: Anda dapat berdonasi berupa sayuran dan buah-buahan dengan
-                                catatan makanan yang akan diberikan setidaknya sedia maksimal tiga hari sebelum penutupan
-                                donasi.
-                            </p>
-                        </div>
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    
+                    <button type="button" class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100" aria-expanded="false" aria-controls="accordion-collapse-body-3" data-accordion-target="#accordion-collapse-body-3">
+                        <span>Ada kategori dan jenis makanan untuk berdonasi di darikita.com?</span>
+                        <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                    
+                    <div id="accordion-collapse-body-3" class="hidden p-5">
+                        <p class="mb-2 text-gray-500">Donasi Makanan Tahan Lama: Anda dapat berdonasi berupa bahan
+                            pokok seperti beras, makanan instan, tepung, gula, garam, minyak dan lainnya yang tahan
+                            lama. Donasi Makanan Segar: Anda dapat berdonasi berupa sayuran dan buah-buahan dengan
+                            catatan makanan yang akan diberikan setidaknya sedia maksimal tiga hari sebelum penutupan
+                            donasi.
+                        </p>
                     </div>
+                </div>
 
                     <!-- Accordion 3 -->
-                    <div class="bg-white rounded-lg shadow-md mb-4">
-                        <h2>
-                            <button type="button"
-                                class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
-                                aria-expanded="false" aria-controls="accordion-collapse-body-2"
-                                data-accordion-target="#accordion-collapse-body-2">
-                                <span>Bagaimana cara darikita.com mendistribusikan makanan?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-collapse-body-2" class="hidden p-5">
-                            <p class="mb-2 text-gray-500">darikita.com bekerja sama dengan berbagai organisasi dan
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    
+                    <button type="button" class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100" aria-expanded="false" aria-controls="accordion-collapse-body-2" data-accordion-target="#accordion-collapse-body-2">
+                        <span>Bagaimana cara darikita.com mendistribusikan makanan?</span>
+                        <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                    
+                    <div id="accordion-collapse-body-2" class="hidden p-5">
+                        <p class="mb-2 text-gray-500">darikita.com bekerja sama dengan berbagai organisasi dan
                                 komunitas lokal untuk mendistribusikan makanan kepada mereka yang membutuhkan. Makanan
                                 didistribusikan secara langsung kepada keluarga-keluarga yang mengalami kesulitan akses
                                 makanan, serta kepada panti asuhan, yayasan sosial, dan tempat penampungan tunawisma.</p>
-                        </div>
                     </div>
+                </div>
 
                     <!-- Accordion 4 -->
-                    <div class="bg-white rounded-lg shadow-md mb-4">
-                        <h2>
-                            <button type="button"
-                                class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
-                                aria-expanded="false" aria-controls="accordion-collapse-body-4"
-                                data-accordion-target="#accordion-collapse-body-4">
-                                <span>Apa yang bisa saya lakukan untuk membantu darikita.com selain berdonasi?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-collapse-body-4" class="hidden p-5">
-                            <p class="mb-2 text-gray-500">Selain berdonasi, Anda juga dapat membantu darikita.com dengan :
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    
+                    <button type="button"
+                            class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
+                            aria-expanded="false" aria-controls="accordion-collapse-body-4"
+                            data-accordion-target="#accordion-collapse-body-4">
+                        <span>Apa yang bisa saya lakukan untuk membantu darikita.com selain berdonasi?</span>
+                        <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                    
+                    <div id="accordion-collapse-body-4" class="hidden p-5">
+                        <p class="mb-2 text-gray-500">Selain berdonasi, Anda juga dapat membantu darikita.com dengan :
                                 Menyebarkan informasi tentang darikita.com kepada teman, keluarga, dan kolega Anda
                                 (Mengambil peran sebagai Pendukung). Menjadi relawan di lokasi pengumpulan atau
                                 distribusi makanan (Mengambil peran sebagai Penggerak). Membantu dalam penggalangan dana
                                 untuk berjalannya event dari darikita.com.</p>
-                        </div>
                     </div>
+                </div>
 
                     <!-- Accordion 5 -->
-                    <div class="bg-white rounded-lg shadow-md mb-4">
-                        <h2>
-                            <button type="button"
-                                class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
-                                aria-expanded="false" aria-controls="accordion-collapse-body-5"
-                                data-accordion-target="#accordion-collapse-body-5">
-                                <span>Bagaimana cara saya bisa bergabung menjadi relawan di darikita.com?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-collapse-body-5" class="hidden p-5">
-                            <p class="mb-2 text-gray-500">Anda dapat bergabung menjadi relawan di darikita.com dengan :
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    
+                    <button type="button"
+                            class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
+                            aria-expanded="false" aria-controls="accordion-collapse-body-5"
+                            data-accordion-target="#accordion-collapse-body-5">
+                        <span>Bagaimana cara saya bisa bergabung menjadi relawan di darikita.com?</span>
+                        <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                    
+                    <div id="accordion-collapse-body-5" class="hidden p-5">
+                        <p class="mb-2 text-gray-500">Anda dapat bergabung menjadi relawan di darikita.com dengan :
                                 Mengunjungi halaman pendaftaran relawan di situs web darikita.com. Mengisi formulir
                                 pendaftaran relawan dan mengikuti proses seleksi yang ditentukan. Menyediakan waktu untuk
                                 berpartisipasi aktif dalam kegiatan pengumpulan dan distribusi makanan.</p>
-                        </div>
                     </div>
+                </div>
 
                     <!-- Accordion 6 -->
-                    <div class="bg-white rounded-lg shadow-md mb-4">
-                        <h2>
-                            <button type="button"
-                                class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
-                                aria-expanded="false" aria-controls="accordion-collapse-body-6"
-                                data-accordion-target="#accordion-collapse-body-6">
-                                <span>Bagaimana cara saya bisa menyebarkan informasi tentang darikita.com?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-collapse-body-6" class="hidden p-5">
-                            <p class="mb-2 text-gray-500">Anda dapat menyebarkan informasi tentang darikita.com dengan :
-                                Memanfaatkan media sosial untuk membagikan cerita dan informasi tentang kegiatan
-                                darikita.com. Mencetak dan menyebarluaskan brosur atau poster tentang darikita.com di
-                                tempat-tempat umum. Mengajak teman, keluarga, dan rekan kerja untuk mengunjungi dan
-                                mendukung darikita.com.</p>
-                        </div>
+                <div class="bg-white rounded-lg shadow-md mb-4">
+                    
+                    <button type="button"
+                        class="w-full flex items-center justify-between p-5 text-left font-medium text-gray-500 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100"
+                        aria-expanded="false" aria-controls="accordion-collapse-body-6"
+                        data-accordion-target="#accordion-collapse-body-6">
+                        <span>Bagaimana cara saya bisa menyebarkan informasi tentang darikita.com?</span>
+                        <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                    
+                    <div id="accordion-collapse-body-6" class="hidden p-5">
+                        <p class="mb-2 text-gray-500">Anda dapat menyebarkan informasi tentang darikita.com dengan :
+                            Memanfaatkan media sosial untuk membagikan cerita dan informasi tentang kegiatan
+                            darikita.com. Mencetak dan menyebarluaskan brosur atau poster tentang darikita.com di
+                            tempat-tempat umum. Mengajak teman, keluarga, dan rekan kerja untuk mengunjungi dan
+                            mendukung darikita.com.</p>
                     </div>
+                </div>
 
             </div>
         </div>

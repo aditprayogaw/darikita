@@ -112,16 +112,16 @@ if(isset($_SESSION['logout']) && $_SESSION['logout'] == True) {
     <div class="max-w-screen-xl mx-auto px-4 py-8 mt-32 mb-16 register hidden">
         <div class="w-1/2 sm:w-full flex flex-wrap justify-center border rounded-lg mx-auto p-4 shadow-xl bg-[#F8F8F8]">
             <h1 class="text-3xl  font-bold text-center mt-4">REGISTER</h1>
-            <form action="../script/login.php" method="POST" class="w-full rounded-sm px-8 py-6">
+            <form action="../script/register.php" method="POST" class="w-full rounded-sm px-8 py-6">
                 <div class="w-full h-[3px] content-center bg-gray-200 mb-4"></div>
                 
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
-                    <input name="name" id="name"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                    <input name="nama" id="name"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="password" class="block text-gray-700 text-sm font-bold mb-2">No. HP</label>
-                    <input name="pass" id="password" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                    <input name="no_hp" id="password" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
@@ -129,11 +129,11 @@ if(isset($_SESSION['logout']) && $_SESSION['logout'] == True) {
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                    <input name="pass" id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                    <input name="password" id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Alamat</label>
-                    <textarea name="address" id="address"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400"></textarea>
+                    <textarea name="alamat" id="address"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400"></textarea>
                 </div>
                 <div class="lg:w-full flex mt-10 mb-4">
                     <button type="submit" name="submit" value="Login" class="bg-white hover:bg-gray-100 w-full lg:mx-[100px] border border-blue-500 text-warna_aksen font-bold py-2 rounded">REGISTRASI</button>

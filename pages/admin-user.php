@@ -43,7 +43,7 @@ $result = $conn->query($sql);
                 <div class="items-start hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                     <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg bg-[#F8F9FB] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
                         <li>
-                            <a href="" class="block py-2 px-3 md:p-0 font-bold text-warna_aksen hover:text-blue-700"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Donasi</a>
+                            <a href="admin-donasi.php" class="block py-2 px-3 md:p-0 font-bold text-warna_aksen hover:text-blue-700"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Donasi</a>
                         </li>
                         <li>
                             <a href="" class="block py-2 px-3 md:p-0 font-bold text-blue-600 ">User</a>
