@@ -12,7 +12,7 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>darikita.com - Form Donasi</title>
+    <title>darikita.com - Admin for Donasi</title>
     <link rel="stylesheet" href="../build/build.css">
 
     <!-- LOGO -->

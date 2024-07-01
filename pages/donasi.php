@@ -162,7 +162,7 @@ if ($result->num_rows > 0) {
                 
                 <div class="flex mt-6 mb-4">
                     <button type="button" name="button" class="
-                    border-2 border-black hover:bg-lime-500 text-sm font-semibold py-2 px-3 rounded-lg mx-auto" onclick="addFormFields()">TAMBAH +</button>
+                    border-2 border-black hover:bg-lime-500 hover:text-white text-sm font-semibold py-2 px-3 rounded-lg mx-auto" onclick="addFormFields()">TAMBAH +</button>
                 </div>
                 
                 <!-- add list btn -->

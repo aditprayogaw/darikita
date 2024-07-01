@@ -1,9 +1,15 @@
 <?php
 session_start();
-
+include '../script/db.php';
 if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
     echo '<script>history.back()</script>';
-}
+};
+
+
+$sql = 'SELECT * FROM user';
+$result = $conn->query($sql);
+
+
 
 ?>
 
@@ -12,7 +18,7 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>darikita.com - Form Donasi</title>
+    <title>darikita.com - Admin for User</title>
     <link rel="stylesheet" href="../build/build.css">
 
     <!-- LOGO -->
@@ -77,6 +83,9 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
             <table class="w-full rounded-lg text-sm text-left rtl:text-right text-gray-500 ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700  sticky top-0">
                     <tr>
+                    <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
+                            Id User
+                        </th>
                         <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
                             Nama
                         </th>
@@ -93,189 +102,29 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
                             Alamat
                         </th>
                         <th scope="col" class="px-6 py-3 text-center bg-gray-100">
-                            Role
-                        </th>
-                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="#" class="font-medium text-blue-600 hover:underline text-center">Edit</a>
-                            <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-                        </td>
-                        
-                    </tr>
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="#" class="font-medium text-blue-600 hover:underline text-center">Edit</a>
-                            <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-                        </td>
-                        
-                    </tr>
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="#" class="font-medium text-blue-600 hover:underline text-center">Edit</a>
-                            <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-                        </td>
-                        
-                    </tr>
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="#" class="font-medium text-blue-600 hover:underline text-center">Edit</a>
-                            <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-                        </td>
-                        
-                    </tr>
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="#" class="font-medium text-blue-600 hover:underline text-center">Edit</a>
-                            <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-                        </td>
-                        
-                    </tr>
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="#" class="font-medium text-blue-600 hover:underline text-center">Edit</a>
-                            <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-                        </td>
-                        
-                    </tr>
-                    <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            
-                        </th>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="#" class="font-medium text-blue-600 hover:underline text-center">Edit</a>
-                            <a href="#" class="font-medium text-red-600 hover:underline">Hapus</a>
-                        </td>
-                        
-                    </tr>
+                <?php
+                    // Loop through hasil query untuk menampilkan data
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['id_user'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['nama'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['no_hp'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['email'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['password'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['alamat'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='9'>Tidak ada data akun!</td></tr>";
+                    }
+                ?>
+                    
                 </tbody>
             </table>
         </div>
