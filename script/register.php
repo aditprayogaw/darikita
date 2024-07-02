@@ -5,23 +5,23 @@ include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama = $_POST['nama'];
     $phone = $_POST['no_hp'];
-    $alamat = $_POST['email'];
-    $username = $_POST['password'];
-    $password = $_POST['alamat'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $address = $_POST['alamat'];
     $role = 'donatur'; // Mengatur peran default
 
     // Mengecek apakah username sudah digunakan
-    $check_username = $conn->prepare("SELECT id_user FROM user WHERE nama = ?");
-    $check_username->bind_param("s", $username);
-    $check_username->execute();
-    $check_username->store_result();
+    $check_email = $conn->prepare("SELECT email FROM user WHERE email = ?");
+    $check_email->bind_param("s", $email);
+    $check_email->execute();
+    $check_email->store_result();
 
-    if ($check_username->num_rows > 0) {
-        echo "nama sudah digunakan.";
+    if ($check_email->num_rows > 0) {
+        echo "email sudah digunakan.";
     } else {
         // Memasukkan data ke database dengan peran default
         $insert_user = $conn->prepare("INSERT INTO user (nama, no_hp, email, password, alamat, role) VALUES (?, ?, ?, ?, ?, ?)");
-        $insert_user->bind_param("ssssss", $nama, $phone, $alamat, $username, $password, $role);
+        $insert_user->bind_param("ssssss", $nama, $phone, $email, $password, $address, $role);
 
         if ($insert_user->execute()) {
             // Registrasi berhasil, tampilkan peringatan dan arahkan dengan JavaScript
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $insert_user->close();
     }
 
-    $check_username->close();
+    $check_email->close();
 }
 
 $conn->close();

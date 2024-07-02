@@ -94,7 +94,7 @@ if ($result->num_rows > 0) {
     <div class="max-w-screen-xl mx-auto px-4 py-8 mt-32 mb-16">
         <div class="md:w-1/2 sm:w-full flex flex-wrap justify-center border rounded-lg mx-auto p-4 shadow-xl bg-[#F8F8F8]">
             <h1 class="text-3xl font-bold text-center mt-4">DONASI</h1>
-            <form class="w-full rounded-sm px-8 py-6">
+            <form method="post" action="../script/insert-donasi.php" class="w-full rounded-sm px-8 py-6">
                 <div class="w-full h-[3px] content-center bg-gray-200 mb-4"></div>
                 <div class="mb-4 ">
                     <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
@@ -112,15 +112,15 @@ if ($result->num_rows > 0) {
                 <div id="form-container">
                     <!-- category donation -->
                     <div class="mb-4">
-                        <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Kategori Makanan</label>
-                        <select id="category" name="category" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                        <label for="idCategory" class="block text-gray-700 text-sm font-bold mb-2">Kategori Makanan</label>
+                        <select id="idCategory" name="idCategory" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
                             <option disabled selected>Pilih Kategori Makanan</option>
                             <?php 
                             $sql = "SELECT * FROM kategori_makanan";
                             $result = $conn->query($sql);
     
                             while ($categories = mysqli_fetch_array($result)) {
-                                echo '<option value="" class="bg-warna_aksen font-medium text-white">'.$categories['kategori'].'</option>';
+                                echo '<option value="'.$categories['id_kategori'].'" class="bg-warna_aksen font-medium text-white">'.$categories['kategori'].'</option>';
                             };
                             ?>
                         </select>
@@ -139,7 +139,7 @@ if ($result->num_rows > 0) {
                             $result = $conn->query($sql);
                             
                             while ($type = mysqli_fetch_array($result)) {
-                                echo '<option value="" class="bg-warna_aksen font-medium text-white">'.$type['jenis'].'</option>';
+                                echo '<option value="'.$type['id_jenis'].'" class="bg-warna_aksen font-medium text-white">'.$type['jenis'].'</option>';
                             }
                             ?>
     
@@ -160,17 +160,17 @@ if ($result->num_rows > 0) {
 
                 <!-- add list btn -->
                 
-                <div class="flex mt-6 mb-4">
+                <!-- <div class="flex mt-6 mb-4">
                     <button type="button" name="button" class="
                     border-2 border-black hover:bg-lime-500 hover:text-white text-sm font-semibold py-2 px-3 rounded-lg mx-auto" onclick="addFormFields()">TAMBAH +</button>
-                </div>
+                </div> -->
                 
                 <!-- add list btn -->
                 
                 
                 <!-- last button  -->
                 <div class="lg:w-full flex mt-10 mb-4">
-                    <button type="submit" name="submit" value="Login" class="
+                    <button type="submit" name="submit" class="
                     bg-blue-500 hover:bg-blue-700 w-full  text-white font-bold py-2 rounded">KONFIRMASI DONASI</button>
                 </div>
                 <div class=" flex justify-between items-center px-28 mb-4">

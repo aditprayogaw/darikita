@@ -1,9 +1,15 @@
 <?php
 session_start();
-
+include '../script/db.php';
 if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
     echo '<script>history.back()</script>';
-}
+};
+
+
+$sql = 'SELECT * FROM donasi';
+$result = $conn->query($sql);
+
+
 
 ?>
 
@@ -37,10 +43,10 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
                 <div class="items-start hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                     <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg bg-[#F8F9FB] md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
                         <li>
-                            <a href="" class="block py-2 px-3 md:p-0 font-bold text-warna_aksen hover:text-blue-700"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Donasi</a>
+                            <a href="" class="block py-2 px-3 md:p-0 font-bold text-blue-600 "><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Donasi</a>
                         </li>
                         <li>
-                            <a href="" class="block py-2 px-3 md:p-0 font-bold text-blue-600 ">User</a>
+                            <a href="admin-user.php" class="block py-2 px-3 md:p-0 font-bold text-warna_aksen hover:text-blue-700 ">User</a>
                         </li>
                     </ul>
                 </div>
@@ -73,114 +79,58 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
     <!-- FORM -->
    
     <div class="max-w-screen-xl mx-auto px-4 py-8 mt-32 mb-16">
-        <table class="w-full rounded-lg border text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                    <th scope="col" class="px-6 py-3">
-                        Nama
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Color
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Category
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Price
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Action
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Apple MacBook Pro 17"
-                    </th>
-                    <td class="px-6 py-4">
-                        Silver
-                    </td>
-                    <td class="px-6 py-4">
-                        Laptop
-                    </td>
-                    <td class="px-6 py-4">
-                        $2999
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Microsoft Surface Pro
-                    </th>
-                    <td class="px-6 py-4">
-                        White
-                    </td>
-                    <td class="px-6 py-4">
-                        Laptop PC
-                    </td>
-                    <td class="px-6 py-4">
-                        $1999
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Magic Mouse 2
-                    </th>
-                    <td class="px-6 py-4">
-                        Black
-                    </td>
-                    <td class="px-6 py-4">
-                        Accessories
-                    </td>
-                    <td class="px-6 py-4">
-                        $99
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Google Pixel Phone
-                    </th>
-                    <td class="px-6 py-4">
-                        Gray
-                    </td>
-                    <td class="px-6 py-4">
-                        Phone
-                    </td>
-                    <td class="px-6 py-4">
-                        $799
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        Apple Watch 5
-                    </th>
-                    <td class="px-6 py-4">
-                        Red
-                    </td>
-                    <td class="px-6 py-4">
-                        Wearables
-                    </td>
-                    <td class="px-6 py-4">
-                        $999
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="overflow-auto flex-grow h-80 border">
+            <table class="w-full rounded-lg text-sm text-left rtl:text-right text-gray-500 ">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700  sticky top-0">
+                    <tr>
+                    <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
+                            Id Donasi
+                        </th>
+                        <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
+                            Nama
+                        </th>
+                        <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
+                            Alamat Donatur
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                            Jenis Makanan
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                            Kategori Makanan
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                            Nama Makanan
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                            Tanggal Donasi
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    // Loop through hasil query untuk menampilkan data
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['id_user'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['nama'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['no_hp'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['email'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['password'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['alamat'] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='9'>Tidak ada data akun!</td></tr>";
+                    }
+                ?>
+                    
+                </tbody>
+            </table>
+        </div>
     </div>
 
       

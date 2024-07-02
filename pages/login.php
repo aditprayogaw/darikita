@@ -117,23 +117,23 @@ if(isset($_SESSION['logout']) && $_SESSION['logout'] == True) {
                 
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
-                    <input name="nama" id="name"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                    <input name="nama" id="name"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" required>
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="password" class="block text-gray-700 text-sm font-bold mb-2">No. HP</label>
-                    <input name="no_hp" id="password" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                    <input name="no_hp" id="password" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" required>
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                    <input name="email" id="email"  type="email" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                    <input name="email" id="email"  type="email" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" required>
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                    <input name="password" id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
+                    <input name="password" id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" required>
                 </div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Alamat</label>
-                    <textarea name="alamat" id="address"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400"></textarea>
+                    <textarea name="alamat" id="address"  type="text" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" required></textarea>
                 </div>
                 <div class="lg:w-full flex mt-10 mb-4">
                     <button type="submit" name="submit" value="Login" class="bg-white hover:bg-gray-100 w-full lg:mx-[100px] border border-blue-500 text-warna_aksen font-bold py-2 rounded">REGISTRASI</button>
