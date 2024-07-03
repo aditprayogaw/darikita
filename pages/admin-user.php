@@ -9,8 +9,10 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
 $sql = 'SELECT * FROM user';
 $result = $conn->query($sql);
 
-
-
+if ($_SESSION['admin_update_user'] && $_SESSION['admin_update_user'] == true) {
+    echo '<script>alert("Data user berhasil diubah!")</script>';
+    unset($_SESSION['admin_update_user']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -118,12 +120,21 @@ $result = $conn->query($sql);
                             echo "<td class='px-6 py-3 text-center bg-white'>" . $row['email'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['password'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-white'>" . $row['alamat'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>
+                                    <a href='admin-edit-user.php?id_user=" . $row['id_user'] . "'>Edit</a> | 
+                                    <a href='admin-delete-user.php?id_user=" . $row['id_user'] . "' onclick='return confirmDelete();'>Delete</a>
+                                  </td>";
                             echo "</tr>";
                         }
                     } else {
                         echo "<tr><td colspan='9'>Tidak ada data akun!</td></tr>";
                     }
                 ?>
+                <script>
+                    function confirmDelete() {
+                        return confirm("Anda yakin ingin menghapus user?");
+                    }
+                </script>
                     
                 </tbody>
             </table>
