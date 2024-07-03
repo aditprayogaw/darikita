@@ -74,10 +74,10 @@ if ($result->num_rows > 0) {
 
 <!-- FORM -->
 
-<div class="max-w-screen-xl mx-auto px-4 py-8 mt-32 mb-16 md:flex md:gap-10">
+<div class="max-w-screen-xl mx-auto px-4 py-8 mt-32 mb-16 flex flex-col md:flex-row md:gap-10 gap-8">
         <div class="lg:w-4/6 bg-[#F8F8F8] p-4 rounded-lg border shadow-xl"> 
-            <h1 class="text-3xl font-bold pb-4 mb-2 borber border-b-2 text-center">HISTORY</h1>
-            <div class="overflow-auto">
+            <h1 class="text-3xl font-bold pb-4 mb-3 borber border-b-2 text-center">HISTORY</h1>
+            <div class="overflow-auto h-96 md:h-[36rem]">
                 <table>
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700  sticky top-0">
                         <tr>
@@ -127,7 +127,8 @@ if ($result->num_rows > 0) {
                 </table>
             </div>
         </div>
-        <div class="md:w-2/6 flex flex-col justify-center border rounded-lg mx-auto p-4 shadow-xl bg-[#F8F8F8]">
+
+        <div class="md:w-2/6 w-full flex flex-col justify-center border rounded-lg mx-auto p-4 shadow-xl bg-[#F8F8F8]">
             <h1 class="text-3xl font-bold text-center mt-4">PROFIL</h1>
             <form class="w-full rounded-sm px-2 py-6">
                 <div class="w-full h-[3px] content-center bg-gray-200 mb-4"></div>
