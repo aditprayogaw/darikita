@@ -3,7 +3,8 @@ session_start();
 
 
 include '../script/db.php';
-$sql = 'SELECT * FROM user WHERE id_user =' . $_SESSION['id_user'];
+$id_user_edit = $_GET['id_user'];
+$sql = "SELECT * FROM user WHERE id_user ='$id_user_edit'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -12,12 +13,33 @@ if ($result->num_rows > 0) {
     echo "Tidak ada data ditemukan";
     exit;
 }
-$conn->close();
 
-if (isset($_SESSION['email_exists'])&& $_SESSION['email_exists'] = true) {
-    echo '<script>alert("Email sudah terdaftar, silahkan gunakan email yang lain.")</script>';
-    unset($_SESSION['email_exists']);
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $nama = $_POST['name'];
+    $password = $_POST['pass'];
+    $no_hp = $_POST['phone'];
+    $alamat = $_POST['address'];
+
+    $check_email = $conn->prepare("SELECT id_user FROM user WHERE email = ? AND id_user != ?");
+    $check_email->bind_param("si", $email, $id_user_edit);
+    $check_email->execute();
+    $check_email->store_result();
+
+    if ($check_email->num_rows > 0) {
+        echo '<script>alert("Email sudah terdaftar")</script>';
+    } else {
+        $query_update = $conn->prepare("UPDATE user SET nama = ?, no_hp = ?, email = ?, password = ?, alamat = ? WHERE id_user = ?");
+        $query_update->bind_param("sssssi", $nama, $no_hp, $email, $password, $alamat, $id_user_edit);
+        $query_update->execute();
+        $query_update->close();
+
+        $_SESSION['admin_update_user'] = true;
+        header('Location: admin-user.php');
+    }
+
 }
+$conn->close();
 
 ?>
 
@@ -53,7 +75,7 @@ if (isset($_SESSION['email_exists'])&& $_SESSION['email_exists'] = true) {
             
             <h1 class="text-3xl font-bold text-center mt-4">UBAH PROFIL USER</h1>
             
-            <form action="../script/ubah-user-profil.php" method="POST" class="w-full rounded-sm px-8 py-6">
+            <form method="POST" class="w-full rounded-sm px-8 py-6">
                 <div class="w-full h-[3px] content-center bg-gray-200 mb-4"></div>
                 <div class="mb-4 lg:mx-[100px]">
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
@@ -86,7 +108,7 @@ if (isset($_SESSION['email_exists'])&& $_SESSION['email_exists'] = true) {
                     <div class="flex-1 h-[2px] bg-gray-500 ml-2"></div>
                 </div>
                 <div class="lg:w-full flex mb-8">
-                    <button type="submit"  class="bg-blue-500 hover:bg-blue-700 w-full text-white font-bold py-2 rounded">SIMPAN</button>
+                    <button type="submit" name="submit" class="bg-blue-500 hover:bg-blue-700 w-full text-white font-bold py-2 rounded">SIMPAN</button>
                 </div>
                 
             </form>
