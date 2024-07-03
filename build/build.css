@@ -1159,10 +1159,6 @@ input:checked + .toggle-bg {
   z-index: 50;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -1362,6 +1358,18 @@ input:checked + .toggle-bg {
 
 .h-full {
   height: 100%;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-\[32rem\] {
+  height: 32rem;
+}
+
+.h-\[36rem\] {
+  height: 36rem;
 }
 
 .w-1\/2 {
@@ -1573,6 +1581,10 @@ input:checked + .toggle-bg {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1958,10 +1970,6 @@ input:checked + .toggle-bg {
 
 .pt-6 {
   padding-top: 1.5rem;
-}
-
-.pb-6 {
-  padding-bottom: 1.5rem;
 }
 
 .text-left {
@@ -2478,6 +2486,10 @@ input:checked + .toggle-bg {
     height: 24rem;
   }
 
+  .md\:h-\[36rem\] {
+    height: 36rem;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2490,8 +2502,8 @@ input:checked + .toggle-bg {
     width: 66.666667%;
   }
 
-  .md\:w-3\/6 {
-    width: 50%;
+  .md\:w-2\/6 {
+    width: 33.333333%;
   }
 
   .md\:w-4\/6 {
@@ -2500,10 +2512,6 @@ input:checked + .toggle-bg {
 
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-2\/6 {
-    width: 33.333333%;
   }
 
   .md\:flex-row {
@@ -2516,18 +2524,6 @@ input:checked + .toggle-bg {
 
   .md\:justify-between {
     justify-content: space-between;
-  }
-
-  .md\:gap-2 {
-    gap: 0.5rem;
-  }
-
-  .md\:gap-4 {
-    gap: 1rem;
-  }
-
-  .md\:gap-5 {
-    gap: 1.25rem;
   }
 
   .md\:gap-10 {
