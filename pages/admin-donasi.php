@@ -6,10 +6,8 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
 };
 
 
-$sql = 'SELECT * FROM donasi';
+$sql = 'SELECT * FROM riwayat_donasi';
 $result = $conn->query($sql);
-
-
 
 ?>
 
@@ -83,28 +81,28 @@ $result = $conn->query($sql);
             <table class="w-full rounded-lg text-sm text-left rtl:text-right text-gray-500 ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700  sticky top-0">
                     <tr>
-                    <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
+                    <th scope="col" class=" px-6 py-3 text-center bg-gray-100 border-b">
                             Id Donasi
                         </th>
-                        <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
+                        <th scope="col" class=" px-6 py-3 text-center bg-gray-100 border-b">
                             Nama
                         </th>
-                        <th scope="col" class=" px-6 py-3 text-center bg-gray-100">
+                        <th scope="col" class=" px-6 py-3 text-center bg-gray-100 border-b">
                             Alamat Donatur
                         </th>
-                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
                             Jenis Makanan
                         </th>
-                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
                             Kategori Makanan
                         </th>
-                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
                             Nama Makanan
                         </th>
-                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
                             Tanggal Donasi
                         </th>
-                        <th scope="col" class="px-6 py-3 text-center bg-gray-100">
+                        <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
                             Action
                         </th>
                     </tr>
@@ -115,12 +113,13 @@ $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['id_user'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['id_donasi'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-white'>" . $row['nama'] . "</td>";
-                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['no_hp'] . "</td>";
-                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['email'] . "</td>";
-                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['password'] . "</td>";
-                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['alamat'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['alamat_donatur'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['jenis'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['kategori'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['nama_makanan'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['tanggal_donasi'] . "</td>";
                             echo "</tr>";
                         }
                     } else {

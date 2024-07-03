@@ -134,14 +134,7 @@ if ($result->num_rows > 0) {
                         <label for="food-type" class="block text-gray-700 text-sm font-bold mb-2">Jenis Makanan</label>
                         <select id="food-type" name="food-type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400">
                             <option disabled selected>Pilih Jenis Makanan</option>
-                            <?php 
-                            $sql = "SELECT * FROM jenis_makanan";
-                            $result = $conn->query($sql);
                             
-                            while ($type = mysqli_fetch_array($result)) {
-                                echo '<option value="'.$type['id_jenis'].'" class="bg-warna_aksen font-medium text-white">'.$type['jenis'].'</option>';
-                            }
-                            ?>
     
                         </select>
     
@@ -268,5 +261,23 @@ if ($result->num_rows > 0) {
 <?php $conn->close(); ?>
 
 <!-- Akhir Footer -->
+    <script>
+    // merender option food-type berdasarkan kategori_makanan?
+    document.getElementById('idCategory').addEventListener('change', function() {
+        var id_kategori = this.value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../script/get_jenis.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var options = xhr.responseText;
+                document.getElementById('food-type').innerHTML = options;
+            }
+        };
+        xhr.send('id_kategori=' + id_kategori);
+    });
+    
+    </script>
 </body>
 </html>
