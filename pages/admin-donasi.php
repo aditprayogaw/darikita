@@ -6,7 +6,7 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
 };
 
 
-$sql = 'SELECT * FROM riwayat_donasi';
+$sql = 'SELECT * FROM history_donasi';
 $result = $conn->query($sql);
 
 ?>
