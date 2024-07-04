@@ -10,8 +10,6 @@ if ($result->num_rows > 0) {
     echo "Tidak ada data ditemukan";
     exit;
 }
-$conn->close();
-
 ?>
 
 <!DOCTYPE html>
@@ -74,30 +72,83 @@ $conn->close();
   
 <!-- Akhir Navigasi -->
 
-    <!-- FORM -->
-    
-    <div class="max-w-screen-xl mx-auto px-4 py-8 mt-32 mb-16">
-        <div class="md:w-1/2 sm:w-full flex flex-wrap justify-center border rounded-lg mx-auto p-4 shadow-xl bg-[#F8F8F8]">
+<!-- FORM -->
+
+<div class="max-w-screen-xl mx-auto px-4 py-8 mt-32 mb-16 flex flex-col md:flex-row md:gap-10 gap-8">
+        <div class="lg:w-4/6 bg-[#F8F8F8] p-4 rounded-lg border shadow-xl"> 
+            <h1 class="text-3xl font-bold pb-4 mb-3 borber border-b-2 text-center">HISTORY</h1>
+            <div class="overflow-auto h-96 md:h-[36rem]">
+                <table>
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700  sticky top-0">
+                        <tr>
+                            <th scope="col" class=" px-6 py-3 text-center bg-gray-100 border-b">
+                                Id Donasi
+                            </th>
+                            <th scope="col" class=" px-6 py-3 text-center bg-gray-100 border-b">
+                                Alamat Donatur
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
+                                Jenis Makanan
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
+                                Kategori Makanan
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
+                                Nama Makanan
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
+                                Tanggal Donasi
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $query_donasi = "SELECT * FROM history_donasi WHERE id_user = '".$_SESSION['id_user']."'";
+                    $result_donasi = $conn->query($query_donasi);
+
+                    if ($result_donasi->num_rows > 0) {
+                        while ($row = $result_donasi->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['id_donasi'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['alamat_donatur'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['jenis'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['kategori'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['nama_makanan'] . "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['tanggal_donasi'] . "</td>";
+                            echo "</td>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='9'>Tidak ada data donasi!</td></tr>";
+                    }
+                    $conn->close();
+
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="md:w-2/6 w-full flex flex-col justify-center border rounded-lg mx-auto p-4 shadow-xl bg-[#F8F8F8]">
             <h1 class="text-3xl font-bold text-center mt-4">PROFIL</h1>
-            <form class="w-full rounded-sm px-8 py-6">
+            <form class="w-full rounded-sm px-2 py-6">
                 <div class="w-full h-[3px] content-center bg-gray-200 mb-4"></div>
-                <div class="mb-4 lg:mx-[100px]">
+                <div class="mb-4">
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
                     <input name="email" id="email" type="email" value="<?= $user['email'] ?>" class="shadow bg-gray-200 appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" disabled>
                 </div>
-                <div class="mb-4 lg:mx-[100px]">
+                <div class="mb-4">
                     <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
                     <input name="name" id="name"  type="text" value="<?= $user['nama'] ?>"  class="shadow bg-gray-200 border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" disabled>
                     </div>
-                <div class="mb-4 lg:mx-[100px]">
+                <div class="mb-4">
                     <label for="pass" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                     <input name="pass" id="pass" type="text" value="<?= $user['password'] ?>" class="shadow bg-gray-200 appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" disabled>
                 </div>
-                <div class="mb-4 lg:mx-[100px]">
+                <div class="mb-4">
                     <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">No. HP</label>
                     <input name="phone" id="phon" type="text" value="<?= $user['no_hp'] ?>" class="shadow bg-gray-200 appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" disabled>
                 </div>
-                <div class="mb-4 lg:mx-[100px]">
+                <div class="mb-4">
                     <label for="alamat" class="block text-gray-700 text-sm font-bold mb-2">Alamat</label>
                     <textarea id="alamat" name="alamat" class="shadow bg-gray-200 appearance-none border rounded w-full py-2 px-3 text-gray-700" disabled><?= $user['alamat'] ?></textarea>
                 </div>
@@ -109,6 +160,7 @@ $conn->close();
                 
             </form>
         </div>
+
     </div>
     
     <!-- FORM -->
