@@ -106,7 +106,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="mb-4 ">
                     <label for="alamat" class="block text-gray-700 text-sm font-bold mb-2">Alamat</label>
-                    <textarea id="alamat" name="alamat" class="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700"></textarea>
+                    <textarea id="alamat" name="alamat" class="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700" required></textarea>
                 </div>
 
                 <div id="form-container">
@@ -145,7 +145,7 @@ if ($result->num_rows > 0) {
                     <!-- food name -->
                     <div class="mb-4">
                         <label for="food" class="block text-gray-700 text-sm font-bold mb-2">Nama Makanan</label>
-                        <textarea name="food" id="food" type="text" class="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400"></textarea>
+                        <textarea name="food" id="food" type="text" class="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 focus:outline-blue-400" required></textarea>
                     </div>
     
                     <!-- food name -->

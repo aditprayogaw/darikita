@@ -100,7 +100,7 @@ session_start();
                                 </svg>
                             </button>
                         </h2>
-                        <div id="accordion-collapse-body-1" class="p-5">
+                        <div id="accordion-collapse-body-1" class="hidden p-5">
                             <p class="mb-2 text-gray-500">Siapapun dapat berdonasi di darikita.com, baik individu,
                                 organisasi, maupun perusahaan. Tidak ada batasan minimum untuk jumlah donasi.</p>
                         </div>
@@ -114,10 +114,8 @@ session_start();
                                 aria-expanded="false" aria-controls="accordion-collapse-body-3"
                                 data-accordion-target="#accordion-collapse-body-3">
                                 <span>Ada kategori dan jenis makanan untuk berdonasi di darikita.com?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
@@ -139,10 +137,8 @@ session_start();
                                 aria-expanded="false" aria-controls="accordion-collapse-body-2"
                                 data-accordion-target="#accordion-collapse-body-2">
                                 <span>Bagaimana cara darikita.com mendistribusikan makanan?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
@@ -162,10 +158,8 @@ session_start();
                                 aria-expanded="false" aria-controls="accordion-collapse-body-4"
                                 data-accordion-target="#accordion-collapse-body-4">
                                 <span>Apa yang bisa saya lakukan untuk membantu darikita.com selain berdonasi?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
@@ -186,10 +180,8 @@ session_start();
                                 aria-expanded="false" aria-controls="accordion-collapse-body-5"
                                 data-accordion-target="#accordion-collapse-body-5">
                                 <span>Bagaimana cara saya bisa bergabung menjadi relawan di darikita.com?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
@@ -209,10 +201,8 @@ session_start();
                                 aria-expanded="false" aria-controls="accordion-collapse-body-6"
                                 data-accordion-target="#accordion-collapse-body-6">
                                 <span>Bagaimana cara saya bisa menyebarkan informasi tentang darikita.com?</span>
-                                <svg class="w-3 h-3 transform rotate-0" viewBox="0 0 10 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                                 </svg>
                             </button>
                         </h2>
@@ -329,6 +319,6 @@ session_start();
 
 <!-- Akhir Footer -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
+<script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 </body>
 </html>

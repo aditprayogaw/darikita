@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $address = $_POST['alamat'];
     $role = 'donatur'; // Mengatur peran default
 
-    // Mengecek apakah username sudah digunakan
+    // Mengecek apakah email sudah digunakan
     $check_email = $conn->prepare("SELECT email FROM user WHERE email = ?");
     $check_email->bind_param("s", $email);
     $check_email->execute();
@@ -38,6 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $conn->close();
-?>
 
 ?>
+

@@ -22,7 +22,8 @@
                 echo '<script>alert("Berhasil Masuk!, Selamat Datang.")</script>';
                 echo '<script>window.location="../index.php"</script>';
             } else{
-                echo '<script>alert("Username atau Password anda salah!")</script>';
+                echo '<script>alert("Email atau Password anda salah!")</script>';
+                echo '<script>window.location="../login.php"</script>';
             }
         } else {
             echo

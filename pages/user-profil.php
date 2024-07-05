@@ -82,10 +82,7 @@ if ($result->num_rows > 0) {
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700  sticky top-0">
                         <tr>
                             <th scope="col" class=" px-6 py-3 text-center bg-gray-100 border-b">
-                                Id Donasi
-                            </th>
-                            <th scope="col" class=" px-6 py-3 text-center bg-gray-100 border-b">
-                                Alamat Donatur
+                                Alamat
                             </th>
                             <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
                                 Jenis Makanan
@@ -99,6 +96,12 @@ if ($result->num_rows > 0) {
                             <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
                                 Tanggal Donasi
                             </th>
+                            <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
+                                Status
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
+                                Tanggal Terkirim
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -109,12 +112,14 @@ if ($result->num_rows > 0) {
                     if ($result_donasi->num_rows > 0) {
                         while ($row = $result_donasi->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['id_donasi'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-white'>" . $row['alamat_donatur'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['jenis'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-white'>" . $row['kategori'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['nama_makanan'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-white'>" . $row['tanggal_donasi'] . "</td>";
+
+                            echo "<td class='px-6 py-3 text-center bg-gray-100'>". $row['status']. "</td>";
+                            echo "<td class='px-6 py-3 text-center bg-white'>" . $row['tanggal_terkirim']. "</td>";
                             echo "</td>";
                         }
                     } else {

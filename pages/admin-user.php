@@ -9,7 +9,7 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
 $sql = 'SELECT * FROM user';
 $result = $conn->query($sql);
 
-if ($_SESSION['admin_update_user'] && $_SESSION['admin_update_user'] == true) {
+if (isset($_SESSION['admin_update_user']) && $_SESSION['admin_update_user'] == true) {
     echo '<script>alert("Data user berhasil diubah!")</script>';
     unset($_SESSION['admin_update_user']);
 }
@@ -48,7 +48,7 @@ if ($_SESSION['admin_update_user'] && $_SESSION['admin_update_user'] == true) {
                             <a href="admin-donasi.php" class="block py-2 px-3 md:p-0 font-bold text-warna_aksen hover:text-blue-700"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Donasi</a>
                         </li>
                         <li>
-                            <a href="" class="block py-2 px-3 md:p-0 font-bold text-blue-600 ">User</a>
+                            <a href="" class="block py-2 px-3 md:p-0 font-bold text-blue-600">User</a>
                         </li>
                     </ul>
                 </div>

@@ -9,6 +9,14 @@ if (!$_SESSION['id_user'] || $_SESSION['role'] !== 'admin' ) {
 $sql = 'SELECT * FROM history_donasi';
 $result = $conn->query($sql);
 
+if (isset($_POST['verifikasi'])) {
+    $id_donasi = $_POST['id_donasi'];
+    $sql = "UPDATE donasi SET status = 'Terkirim', tanggal_terkirim = CURRENT_TIMESTAMP WHERE id_donasi = '$id_donasi'";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+        header('Location: admin-donasi.php');
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -103,7 +111,7 @@ $result = $conn->query($sql);
                             Tanggal Donasi
                         </th>
                         <th scope="col" class="px-6 py-3 text-center bg-gray-100 border-b">
-                            Action
+                            Status
                         </th>
                     </tr>
                 </thead>
@@ -120,6 +128,22 @@ $result = $conn->query($sql);
                             echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['kategori'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-white'>" . $row['nama_makanan'] . "</td>";
                             echo "<td class='px-6 py-3 text-center bg-gray-100'>" . $row['tanggal_donasi'] . "</td>";
+
+                            if ($row['status'] == 'Terkirim') {
+                                echo "
+                                <td>
+                                    <p class='px-6 py-3 text-center bg-green-500 text-white'>Terkirim</p>
+                                </td>";
+                            } else {
+                                echo '<td>
+                                    <form method="post">
+                                        <input type="hidden" value="'.$row['id_donasi'].'" name="id_donasi">
+                                        <button type="submit" name="verifikasi" class="bg-red-500 hover:bg-red-700 text-white px-6 py-3">Verifikasi</button>
+                                    </form>
+                                </td>';
+                            }
+
+
                             echo "</tr>";
                         }
                     } else {
